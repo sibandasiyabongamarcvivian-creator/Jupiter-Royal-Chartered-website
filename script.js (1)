@@ -1,0 +1,71 @@
+
+const quoteForm = document.getElementById("quoteForm");
+
+// Set the earliest selectable date to today
+const dateInput = document.getElementById("date");
+
+const today = new Date();
+const localToday = new Date(
+    today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+dateInput.min = localToday;
+
+
+// Handle the quote form
+quoteForm.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    // Collect customer information
+    const name = document.getElementById("name").value.trim();
+
+    const phone = document.getElementById("phone").value.trim();
+
+    const address = document.getElementById("address").value.trim();
+
+    const location = document.getElementById("location").value;
+
+    const service = document.getElementById("service").value;
+
+    const date = document.getElementById("date").value;
+
+    const description = document.getElementById("description").value.trim();
+
+
+    // Prepare WhatsApp message
+    const message = `
+JUPITER ROYAL CHARTERED PROFESSIONALS PTY LTD
+
+NEW CUSTOMER QUOTATION REQUEST
+
+Customer Name: ${name}
+
+Customer Phone: ${phone}
+
+Property Address: ${address}
+
+Location: ${location}
+
+Service Required: ${service}
+
+Preferred Project Date: ${date}
+
+Project Description:
+${description}
+
+Please contact me regarding this project.
+
+Thank you.
+    `;
+
+
+    // Convert message into WhatsApp format
+    const whatsappURL =
+        "https://wa.me/27735270088?text=" +
+        encodeURIComponent(message);
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+});

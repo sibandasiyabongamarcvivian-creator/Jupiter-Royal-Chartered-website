@@ -1,0 +1,405 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101010;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+:root {
+    --gold: #d4af37;
+    --dark: #101010;
+    --light-dark: #1b1b1b;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    background: #080808;
+    border-bottom: 1px solid #9c792e;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    color: var(--gold);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.logo span,
+footer span {
+    color: white;
+}
+
+.logo small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-button,
+.gold-button {
+    background: var(--gold);
+    color: #111;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.gold-button:hover {
+    background: #f0d47b;
+}
+
+.hero {
+    min-height: 570px;
+    display: flex;
+    align-items: center;
+    padding: 70px 8%;
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.92),
+      rgba(0,0,0,.5)),
+      url("images/hero.jpg") center/cover;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.gold-text {
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-content > p:not(.gold-text) {
+    color: #ddd;
+    max-width: 550px;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.outline-button {
+    padding: 11px 20px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 4px;
+}
+
+.section {
+    padding: 80px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2,
+.about h2,
+.contact h2 {
+    font-size: 35px;
+    margin: 12px 0;
+}
+
+.section-heading > p:last-child {
+    color: #bbb;
+}
+
+.service-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    background: var(--light-dark);
+    border: 1px solid #333;
+    border-radius: 7px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--gold);
+}
+
+.service-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    color: var(--gold);
+    padding: 15px 15px 5px;
+    font-size: 18px;
+}
+
+.service-card p {
+    color: #ccc;
+    padding: 0 15px 20px;
+    font-size: 14px;
+}
+
+.about {
+    background: #1b1b1b;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.about h2 {
+    color: var(--gold);
+}
+
+.about h3 {
+    color: var(--gold);
+    margin-top: 20px;
+}
+
+.about p {
+    color: #ddd;
+}
+
+.area-grid {
+    max-width: 850px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.area-grid div {
+    padding: 25px 10px;
+    text-align: center;
+    background: #1b1b1b;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.center-text {
+    text-align: center;
+    margin-top: 25px;
+    color: #ccc;
+}
+
+.quote {
+    background: #1b1b1b;
+}
+
+#quoteForm {
+    max-width: 850px;
+    margin: auto;
+    background: #101010;
+    border: 1px solid #705b28;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    background: #222;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 1px solid var(--gold);
+}
+
+.form-group input[type="date"] {
+    color-scheme: dark;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    font-size: 16px;
+}
+
+.form-note {
+    text-align: center;
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px 0;
+    color: #ccc;
+}
+
+.contact .gold-button {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid var(--gold);
+    padding: 35px 15px;
+    color: #aaa;
+}
+
+footer h3 {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 22px;
+    right: 20px;
+    background: #168b4b;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    z-index: 200;
+}
+
+@media (max-width: 900px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 13px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 50px 6%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .area-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    #quoteForm {
+        padding: 20px;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+}
